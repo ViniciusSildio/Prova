@@ -1,17 +1,17 @@
 import random
 
-class Entradas():
+class Dados_Entradas():
     def __init__(self, valor, pesos, valor_ideal):
         self.valor = int(valor)
         self.pesos = dict(pesos)
 
 
-def somatorio(entradas, peso):
+def somatorio(dados_entradas, peso):
     # Faz a soma entre os valores e os pesos
     print(f'Peso do Somatório selecionado = {peso}')
     constante = 0
     valor_somatorio = 0
-    for e in entradas:
+    for e in dados_entradas:
         valor_somatorio += e['valor'] * e['pesos'][peso]
     return round(valor_somatorio + constante, 2)
 
@@ -26,17 +26,17 @@ def gerar_pesos(qtd_pesos):
         pesos[f'w{n_peso}'] = round(random.random(), 2)
     return pesos
 
-def gera_lista_entradas(qtd_entradas, qtd_pesos_por_entradas):
+def gerar_lista_entradas(qtd_entradas, qtd_pesos_por_entradas):
     # Gera a lista de entradas com valores aleatórios
-    entradas = []
-    for n_entradas in range(qtd_entradas):
-        vars()[f'e{str(n_entradas)}'] = {
-            "nome": f'Entrada {str(n_entradas)}',
+    dados_entradas = []
+    for n_dados_entradas in range(qtd_entradas):
+        vars()[f'e{str(n_dados_entradas)}'] = {
+            "nome": f'Entrada {str(n_dados_entradas)}',
             "valor": round(random.random(), 2),
             "pesos": gerar_pesos(qtd_pesos_por_entradas)
         }
-        entradas.append(vars()[f'e{str(n_entradas)}'])
-    return entradas
+        dados_entradas.append(vars()[f'e{str(n_dados_entradas)}'])
+    return dados_entradas
 
 def chamada_peso_randomico(entrada):
     # Chama um número de entrada aleatório
@@ -46,15 +46,15 @@ def chamada_peso_randomico(valor):
     # Chama um valor aleatório
     return f'w{str(random.randint(0, int(valor) - 1))}'
 
-def print_lista_entradas(entradas):
+def print_lista_entradas(dados_entradas):
     # Exibe a lista de entradas e de pesos calculada
-    for item in entradas:
+    for item in dados_entradas:
         print(f'{item["nome"]}: valor = {item["valor"]}, pesos = {item["pesos"]} ')
     print('\n')
 
-def print_lista_entradas_bruta(entradas):
+def print_lista_entradas_bruta(dados_entradas):
     # Exibe a lista com os numeros de entradas e dos pesos de forma bruta
-    for item in entradas:
+    for item in dados_entradas:
         print(item)
     print("\n")
 
@@ -66,7 +66,7 @@ def run():
     print('\n=-=-=-=-=-=-=-= Comeco =-=-=-=-=-=-=-=\n')
     print(f'Quantidade de entradas: {qtd_entradas}\nQuantidade de pesos por entrada: {qtd_pesos}\n')
 
-    entradas = gera_lista_entradas(qtd_entradas, qtd_pesos)
+    dados_entradas = gerar_lista_entradas(qtd_entradas, qtd_pesos)
     saidas = gera_lista_entradas(qtd_entradas, qtd_pesos)
     print(f'\n')
     print(f'Lista aleatótia 1:\n')
