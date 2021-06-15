@@ -67,7 +67,7 @@ def run():
     print(f'Quantidade de entradas: {qtd_entradas}\nQuantidade de pesos por entrada: {qtd_pesos}\n')
 
     dados_entradas = gerar_lista_entradas(qtd_entradas, qtd_pesos)
-    saidas = gera_lista_entradas(qtd_entradas, qtd_pesos)
+    saidas = gerar_lista_entradas(qtd_entradas, qtd_pesos)
     print(f'\n')
     print(f'Lista aleatótia 1:\n')
     print_lista_entradas(dados_entradas)
