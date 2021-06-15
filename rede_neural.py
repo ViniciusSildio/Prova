@@ -70,13 +70,13 @@ def run():
     saidas = gera_lista_entradas(qtd_entradas, qtd_pesos)
     print(f'\n')
     print(f'Lista aleatótia 1:\n')
-    print_lista_entradas(entradas)
+    print_lista_entradas(dados_entradas)
     print(f'Lista aleatória 2:')
     print_lista_entradas(saidas)
 
     print(f'\n')
 
-    somatorios = somatorio(entradas, chamada_peso_randomico(qtd_pesos))
+    somatorios = somatorio(dados_entradas, chamada_peso_randomico(qtd_pesos))
     soma = somatorio(saidas, chamada_peso_randomico(qtd_pesos))
 
     print(f'Valor da Função de Ativação 1 chamada: {somatorios}')
